@@ -168,7 +168,13 @@ const App = ({ isServerInfo }) => {
       params: options,
       onSuccess: (result) => {
         setLoading(false);
-        setFee(Moralis.Units.FromWei(result).toFixed(4))
+        if (chainId === "0x89") {
+          setFee(Moralis.Units.FromWei(result).toFixed(2))
+        }
+        else if (chainId === "0x38") {
+          setFee(Moralis.Units.FromWei(result).toFixed(6))
+        }
+
       },
       onError: (error) => {
         console.log("FAIL", error);
@@ -206,7 +212,7 @@ const App = ({ isServerInfo }) => {
           {fee ? <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`Unlock Fee: ${fee ? fee : "0"} ${nativeName} `}</div> : <Spin />}
           {tokenBalance ? <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`${tokenBalance ? tokenBalance : "0"} Mverse`}</div> : <Spin />}
           <GameBalance nativeName={"Farmed Mverse"} />
-          <NativeBalance />
+          {/* <NativeBalance /> */}
           <Chains />
           <Account />
         </div>
