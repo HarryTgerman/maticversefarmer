@@ -11,7 +11,7 @@ import Account from "components/Account";
 import Chains from "components/Chains";
 import NFTBalance from "components/NFTBalance";
 import ERC20Balance from "components/ERC20Balance";
-import { Button, Layout, Image, Spin, Typography } from "antd";
+import { Button, Layout, Image, Spin, Typography, Tooltip } from "antd";
 import SearchCollections from "components/SearchCollections";
 import "antd/dist/antd.css";
 import NativeBalance from "components/NativeBalance";
@@ -198,7 +198,9 @@ const App = ({ isServerInfo }) => {
         </div>
 
         <div style={styles.headerRight}>
-          <Button onClick={() => navigator.clipboard.writeText(farmAddress)} >Copy Contract</Button>
+          <Tooltip title="Copy contract address to clipboard">
+            <Button onClick={() => navigator.clipboard.writeText(farmAddress)} >Copy Contract</Button>
+          </Tooltip>
           <Button href="https://app.gelato.network/new-task" target="_blank">Create Task</Button>
           <Button type="primary" onClick={() => claimRewards()} loading={loading}>Claim</Button>
           {fee ? <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`Unlock Fee: ${fee ? fee : "0"} ${nativeName} `}</div> : <Spin />}
@@ -228,10 +230,10 @@ const App = ({ isServerInfo }) => {
           ⭐️ one free hero unlock
         </Text>
         <Text style={{ display: "block" }}>
-          ⭐️ support with setting ub autoFight
+          ⭐️ support with setting up auto fighting
         </Text>
         <Text style={{ display: "block" }}>
-          ⭐️ free unlock for every reffered MaticVerse Player
+          ⭐️ get rewards for reffering other MaitcVerse players
         </Text>
       </Footer>
     </Layout>
