@@ -211,10 +211,8 @@ const App = ({ isServerInfo }) => {
       </Header>
       <div style={styles.content}>
         <NFTBalance />
-        {/* <Redirect to="/" /> */}
       </div>
       <Footer style={{ textAlign: "center" }}>
-
         <Text style={{ display: "block" }}>
           Join our{" "}
           <a
@@ -243,7 +241,7 @@ const App = ({ isServerInfo }) => {
 export const Logo = () => (
   <div style={{ display: "flex" }}>
     <Image
-      src="logo.JPG"
+      src="logo.png"
       alt=""
       height={60}
     />
