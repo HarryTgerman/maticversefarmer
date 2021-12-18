@@ -209,8 +209,8 @@ const App = ({ isServerInfo }) => {
           </Tooltip>
           <Button href="https://app.gelato.network/new-task" target="_blank">Create Task</Button>
           <Button type="primary" onClick={() => claimRewards()} loading={loading}>Claim</Button>
-          {fee ? <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`Unlock Fee: ${fee ? fee : "0"} ${nativeName} `}</div> : <Spin />}
-          {tokenBalance ? <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`${tokenBalance ? tokenBalance : "0"} Mverse`}</div> : <Spin />}
+          <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`Unlock Fee: ${fee ? fee : "0"} ${nativeName} `}</div>
+          <div style={{ textAlign: "center", whiteSpace: "nowrap" }}>{`${tokenBalance ? tokenBalance : "0"} Mverse`}</div>
           <GameBalance nativeName={"Farmed Mverse"} />
           {/* <NativeBalance /> */}
           <Chains />

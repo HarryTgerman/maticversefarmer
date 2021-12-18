@@ -441,7 +441,6 @@ function NFTBalance() {
         setVisibility(false);
         succUnlock();
         getHeroes();
-        setBalance(Moralis.Units.FromWei(result).toFixed(2))
       },
       onError: (error) => {
         console.log("FAIL", error);
